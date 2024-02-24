@@ -1,24 +1,31 @@
 EXECUTABLE = push_swap
 
 FILES = push_swap.c \
-		parsing/test.c\
 		parsing/parsing_utils.c \
 		parsing/parsing.c \
+		commandes/commande_ps.c \
+		commandes/commande_rotate.c \
+		commandes/commande_rev_rotate.c \
 		lst_utils.c \
 		lst_manip.c \
 		free_and_exit.c \
 		algo.c \
 		target.c \
-		commandes/commande_ps.c \
-		commandes/commande_rotate.c \
-		commandes/commande_rev_rotate.c \
+		cost.c \
+		init.c \
+		init_min_max.c \
+		execute.c \
+		execute2.c \
+		sort_three.c \
+		first_second_part.c \
+		final_part.c \
 
 
 LIBFT = lib_ft/libft.a
 
 COMPIL = cc
 
-FLAGS = -Wall -Werror -Wextra -g
+FLAGS = -Wall -Werror -Wextra
 
 HEADER_F = push_swap.h
 

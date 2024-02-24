@@ -6,7 +6,7 @@
 /*   By: fsalomon <fsalomon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 16:20:43 by fsalomon          #+#    #+#             */
-/*   Updated: 2024/01/31 12:27:02 by fsalomon         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:55:16 by fsalomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,6 @@ static int	ft_check_doublon(int argc, long *number_list)
 			break ;
 		while (j < argc)
 		{
-			if (j == i)
-				break ;
 			if (number_list[i] == number_list[j])
 			{
 				doublon = 1;
@@ -78,7 +76,7 @@ static int	ft_check_doublon(int argc, long *number_list)
 			j++;
 		}
 		i++;
-	}
+	} 
 	return (doublon);
 }
 

@@ -6,13 +6,13 @@
 /*   By: fsalomon <fsalomon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 15:23:10 by fsalomon          #+#    #+#             */
-/*   Updated: 2024/01/31 15:40:50 by fsalomon         ###   ########.fr       */
+/*   Updated: 2024/02/20 10:14:17 by fsalomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_check_char(int argc, char **argv)
+int	ft_check_char(int argc, char **argv, long *number_list)
 {
 	int	i;
 	int	j;
@@ -26,10 +26,12 @@ int	ft_check_char(int argc, char **argv)
 			if ((argv[i][j] < 48 || argv[i][j] > 57) && argv[i][j] != 32
 				&& argv[i][j] != 43 && argv[i][j] != 45)
 			{
+				free(number_list);
 				return (1);
 			}
 			if ((argv[i][j] == 43 || argv[i][j] == 45) && j > 0)
 			{
+				free(number_list);
 				return (1);
 			}
 			j++;
@@ -44,7 +46,7 @@ int	ft_check_error(int argc, char **argv, long *number_list)
 	int	i;
 
 	i = 0;
-	if (ft_check_char(argc, argv) != 0)
+	if (ft_check_char(argc, argv, number_list) != 0)
 		return (1);
 	if (ft_check_int(argc, argv, number_list) != 0)
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: fsalomon <fsalomon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 15:39:35 by fsalomon          #+#    #+#             */
-/*   Updated: 2024/01/26 11:06:46 by fsalomon         ###   ########.fr       */
+/*   Updated: 2024/02/17 16:57:56 by fsalomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,8 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	splitted = NULL;
+	if ((count_words(i, (char *)s, c) == 0))
+		exit(write(2, "Error\n", 6));
 	splitted = malloc(sizeof(char *) * (count_words(i, (char *)s, c) + 1));
 	if (!splitted)
 		return (NULL);

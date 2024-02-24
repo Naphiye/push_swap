@@ -6,7 +6,7 @@
 /*   By: fsalomon <fsalomon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:36:35 by fsalomon          #+#    #+#             */
-/*   Updated: 2024/01/31 16:59:21 by fsalomon         ###   ########.fr       */
+/*   Updated: 2024/02/14 10:39:12 by fsalomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_stack	*ft_lstnew(long number)
 	new->min = 0;
 	new->max = 0;
 	new->index = 0;
+	new->cheapest = 0;
 	return (new);
 }
 
@@ -48,6 +49,20 @@ void	ft_lstclear(t_stack **lst)
 	lst = NULL;
 }
 
+void	ft_clear_target(t_stack **lst)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (i < (ft_get_stack_size(lst)))
+	{
+		(*lst)->target = NULL;
+		(*lst) = (*lst)->next;
+		i ++;
+	}
+	return ;
+}
+
 unsigned int	ft_get_stack_size(t_stack **lst)
 {
 	t_stack			*tmp;
@@ -63,26 +78,4 @@ unsigned int	ft_get_stack_size(t_stack **lst)
 		tmp = tmp->next;
 	}
 	return (i);
-}
-
-void	ft_init_min_and_max(t_stack **a, unsigned int lst_size)
-{
-	t_stack			*min;
-	t_stack			*max;
-	unsigned int	i;
-
-	i = 0;
-	min = *a;
-	max = *a;
-	while (i < lst_size)
-	{
-		if ((*a)->number < min->number)
-			min = *a;
-		else if ((*a)->number > max->number)
-			max = *a;
-		(*a) = (*a)->next;
-		i++;
-	}
-	min->min = 1;
-	max->max = 1;
 }
