@@ -9,7 +9,7 @@ Le projet met en avant la maîtrise des structures de données, la gestion de la
 
 ---
 
-## 🚀 Fonctionnalités
+## 🚀 Fonctionnalités & contraintes
 
 - Trier une liste d'entiers fournie en argument.
 - Utilisation de deux piles (`stack_a` et `stack_b`) pour effectuer le tri.
@@ -29,6 +29,10 @@ Le projet met en avant la maîtrise des structures de données, la gestion de la
 ## Utilisation
 
 Clone le projet et compile-le avec `make` 
+
 ./push_swap "liste d'entier"
+
 ou
+
 ./push_swap <entier1> <entier2> <...>
+
